@@ -5,14 +5,14 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : ki18n
-Version  : 5.48.0
-Release  : 1
-URL      : https://download.kde.org/stable/frameworks/5.48/ki18n-5.48.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.48/ki18n-5.48.0.tar.xz
-Source99 : https://download.kde.org/stable/frameworks/5.48/ki18n-5.48.0.tar.xz.sig
+Version  : 5.48.1
+Release  : 2
+URL      : https://download.kde.org/stable/frameworks/5.48/ki18n-5.48.1.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.48/ki18n-5.48.1.tar.xz
+Source99 : https://download.kde.org/stable/frameworks/5.48/ki18n-5.48.1.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
-License  : LGPL-2.1
+License  : BSD-3-Clause LGPL-2.1
 Requires: ki18n-lib
 Requires: ki18n-license
 Requires: ki18n-locales
@@ -75,14 +75,14 @@ locales components for the ki18n package.
 
 
 %prep
-%setup -q -n ki18n-5.48.0
+%setup -q -n ki18n-5.48.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1531924483
+export SOURCE_DATE_EPOCH=1532271650
 mkdir clr-build
 pushd clr-build
 %cmake ..
@@ -90,10 +90,11 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1531924483
+export SOURCE_DATE_EPOCH=1532271650
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/ki18n
 cp COPYING.LIB %{buildroot}/usr/share/doc/ki18n/COPYING.LIB
+cp COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/doc/ki18n/COPYING-CMAKE-SCRIPTS
 pushd clr-build
 %make_install
 popd
@@ -165,6 +166,7 @@ popd
 
 %files license
 %defattr(-,root,root,-)
+/usr/share/doc/ki18n/COPYING-CMAKE-SCRIPTS
 /usr/share/doc/ki18n/COPYING.LIB
 
 %files locales -f ki18n5.lang
