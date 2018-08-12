@@ -6,7 +6,7 @@
 #
 Name     : ki18n
 Version  : 5.48.1
-Release  : 2
+Release  : 3
 URL      : https://download.kde.org/stable/frameworks/5.48/ki18n-5.48.1.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.48/ki18n-5.48.1.tar.xz
 Source99 : https://download.kde.org/stable/frameworks/5.48/ki18n-5.48.1.tar.xz.sig
@@ -19,6 +19,8 @@ Requires: ki18n-locales
 Requires: ki18n-data
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
+BuildRequires : python3
+BuildRequires : qtbase-dev qtbase-extras mesa-dev
 
 %description
 # KI18n
@@ -82,7 +84,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1532271650
+export SOURCE_DATE_EPOCH=1534092271
 mkdir clr-build
 pushd clr-build
 %cmake ..
@@ -90,11 +92,11 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1532271650
+export SOURCE_DATE_EPOCH=1534092271
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/ki18n
-cp COPYING.LIB %{buildroot}/usr/share/doc/ki18n/COPYING.LIB
 cp COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/doc/ki18n/COPYING-CMAKE-SCRIPTS
+cp COPYING.LIB %{buildroot}/usr/share/doc/ki18n/COPYING.LIB
 pushd clr-build
 %make_install
 popd
