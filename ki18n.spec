@@ -5,22 +5,22 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : ki18n
-Version  : 5.50.0
-Release  : 6
-URL      : https://download.kde.org/stable/frameworks/5.50/ki18n-5.50.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.50/ki18n-5.50.0.tar.xz
-Source99 : https://download.kde.org/stable/frameworks/5.50/ki18n-5.50.0.tar.xz.sig
+Version  : 5.51.0
+Release  : 7
+URL      : https://download.kde.org/stable/frameworks/5.51/ki18n-5.51.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.51/ki18n-5.51.0.tar.xz
+Source99 : https://download.kde.org/stable/frameworks/5.51/ki18n-5.51.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause LGPL-2.1
-Requires: ki18n-lib
-Requires: ki18n-license
-Requires: ki18n-locales
-Requires: ki18n-data
+Requires: ki18n-data = %{version}-%{release}
+Requires: ki18n-lib = %{version}-%{release}
+Requires: ki18n-license = %{version}-%{release}
+Requires: ki18n-locales = %{version}-%{release}
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
 BuildRequires : python3
-BuildRequires : qtbase-dev qtbase-extras mesa-dev
+BuildRequires : qtbase-dev mesa-dev
 
 %description
 # KI18n
@@ -42,9 +42,9 @@ data components for the ki18n package.
 %package dev
 Summary: dev components for the ki18n package.
 Group: Development
-Requires: ki18n-lib
-Requires: ki18n-data
-Provides: ki18n-devel
+Requires: ki18n-lib = %{version}-%{release}
+Requires: ki18n-data = %{version}-%{release}
+Provides: ki18n-devel = %{version}-%{release}
 
 %description dev
 dev components for the ki18n package.
@@ -53,8 +53,8 @@ dev components for the ki18n package.
 %package lib
 Summary: lib components for the ki18n package.
 Group: Libraries
-Requires: ki18n-data
-Requires: ki18n-license
+Requires: ki18n-data = %{version}-%{release}
+Requires: ki18n-license = %{version}-%{release}
 
 %description lib
 lib components for the ki18n package.
@@ -77,26 +77,26 @@ locales components for the ki18n package.
 
 
 %prep
-%setup -q -n ki18n-5.50.0
+%setup -q -n ki18n-5.51.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1536433297
-mkdir clr-build
+export SOURCE_DATE_EPOCH=1539615773
+mkdir -p clr-build
 pushd clr-build
 %cmake ..
-make  %{?_smp_mflags}
+make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1536433297
+export SOURCE_DATE_EPOCH=1539615773
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/ki18n
-cp COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/doc/ki18n/COPYING-CMAKE-SCRIPTS
-cp COPYING.LIB %{buildroot}/usr/share/doc/ki18n/COPYING.LIB
+mkdir -p %{buildroot}/usr/share/package-licenses/ki18n
+cp COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/ki18n/COPYING-CMAKE-SCRIPTS
+cp COPYING.LIB %{buildroot}/usr/share/package-licenses/ki18n/COPYING.LIB
 pushd clr-build
 %make_install
 popd
@@ -163,13 +163,13 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5I18n.so.5
-/usr/lib64/libKF5I18n.so.5.50.0
+/usr/lib64/libKF5I18n.so.5.51.0
 /usr/lib64/qt5/plugins/kf5/ktranscript.so
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/ki18n/COPYING-CMAKE-SCRIPTS
-/usr/share/doc/ki18n/COPYING.LIB
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/ki18n/COPYING-CMAKE-SCRIPTS
+/usr/share/package-licenses/ki18n/COPYING.LIB
 
 %files locales -f ki18n5.lang
 %defattr(-,root,root,-)
