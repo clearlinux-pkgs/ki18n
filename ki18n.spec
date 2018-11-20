@@ -6,7 +6,7 @@
 #
 Name     : ki18n
 Version  : 5.52.0
-Release  : 9
+Release  : 10
 URL      : https://download.kde.org/stable/frameworks/5.52/ki18n-5.52.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.52/ki18n-5.52.0.tar.xz
 Source99 : https://download.kde.org/stable/frameworks/5.52/ki18n-5.52.0.tar.xz.sig
@@ -30,14 +30,6 @@ KI18n provides functionality for internationalizing user interface text
 in applications, based on the GNU Gettext translation system.
 It wraps the standard Gettext functionality, so that the programmers
 and translators can use the familiar Gettext tools and workflows.
-
-%package abi
-Summary: abi components for the ki18n package.
-Group: Default
-
-%description abi
-abi components for the ki18n package.
-
 
 %package data
 Summary: data components for the ki18n package.
@@ -92,7 +84,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1541867803
+export SOURCE_DATE_EPOCH=1542742014
 mkdir -p clr-build
 pushd clr-build
 %cmake ..
@@ -100,7 +92,7 @@ make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1541867803
+export SOURCE_DATE_EPOCH=1542742014
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ki18n
 cp COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/ki18n/COPYING-CMAKE-SCRIPTS
@@ -112,10 +104,6 @@ popd
 
 %files
 %defattr(-,root,root,-)
-
-%files abi
-%defattr(-,root,root,-)
-/usr/share/abi/libKF5I18n.so.5.52.0.abi
 
 %files data
 %defattr(-,root,root,-)
