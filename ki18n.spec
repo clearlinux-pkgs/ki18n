@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : ki18n
-Version  : 5.52.0
-Release  : 10
-URL      : https://download.kde.org/stable/frameworks/5.52/ki18n-5.52.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.52/ki18n-5.52.0.tar.xz
-Source99 : https://download.kde.org/stable/frameworks/5.52/ki18n-5.52.0.tar.xz.sig
+Version  : 5.53.0
+Release  : 11
+URL      : https://download.kde.org/stable/frameworks/5.53/ki18n-5.53.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.53/ki18n-5.53.0.tar.xz
+Source99 : https://download.kde.org/stable/frameworks/5.53/ki18n-5.53.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause LGPL-2.1
@@ -77,22 +77,22 @@ locales components for the ki18n package.
 
 
 %prep
-%setup -q -n ki18n-5.52.0
+%setup -q -n ki18n-5.53.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1542742014
+export SOURCE_DATE_EPOCH=1544478583
 mkdir -p clr-build
 pushd clr-build
 %cmake ..
-make  %{?_smp_mflags} VERBOSE=1
+make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1542742014
+export SOURCE_DATE_EPOCH=1544478583
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ki18n
 cp COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/ki18n/COPYING-CMAKE-SCRIPTS
@@ -163,7 +163,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5I18n.so.5
-/usr/lib64/libKF5I18n.so.5.52.0
+/usr/lib64/libKF5I18n.so.5.53.0
 /usr/lib64/qt5/plugins/kf5/ktranscript.so
 
 %files license
