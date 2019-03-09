@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : ki18n
-Version  : 5.55.0
-Release  : 15
-URL      : https://download.kde.org/stable/frameworks/5.55/ki18n-5.55.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.55/ki18n-5.55.0.tar.xz
-Source99 : https://download.kde.org/stable/frameworks/5.55/ki18n-5.55.0.tar.xz.sig
+Version  : 5.56.0
+Release  : 16
+URL      : https://download.kde.org/stable/frameworks/5.56/ki18n-5.56.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.56/ki18n-5.56.0.tar.xz
+Source99 : https://download.kde.org/stable/frameworks/5.56/ki18n-5.56.0.tar.xz.sig
 Summary  : Advanced internationalization framework
 Group    : Development/Tools
 License  : BSD-3-Clause LGPL-2.1
@@ -45,6 +45,7 @@ Group: Development
 Requires: ki18n-lib = %{version}-%{release}
 Requires: ki18n-data = %{version}-%{release}
 Provides: ki18n-devel = %{version}-%{release}
+Requires: ki18n = %{version}-%{release}
 
 %description dev
 dev components for the ki18n package.
@@ -77,22 +78,23 @@ locales components for the ki18n package.
 
 
 %prep
-%setup -q -n ki18n-5.55.0
+%setup -q -n ki18n-5.56.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1549728894
+export SOURCE_DATE_EPOCH=1552145812
 mkdir -p clr-build
 pushd clr-build
+export LDFLAGS="${LDFLAGS} -fno-lto"
 %cmake ..
 make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1549728894
+export SOURCE_DATE_EPOCH=1552145812
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ki18n
 cp COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/ki18n/COPYING-CMAKE-SCRIPTS
@@ -163,7 +165,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5I18n.so.5
-/usr/lib64/libKF5I18n.so.5.55.0
+/usr/lib64/libKF5I18n.so.5.56.0
 /usr/lib64/qt5/plugins/kf5/ktranscript.so
 
 %files license
