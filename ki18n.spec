@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : ki18n
-Version  : 5.63.0
-Release  : 27
-URL      : https://download.kde.org/stable/frameworks/5.63/ki18n-5.63.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.63/ki18n-5.63.0.tar.xz
-Source1 : https://download.kde.org/stable/frameworks/5.63/ki18n-5.63.0.tar.xz.sig
+Version  : 5.64.0
+Release  : 28
+URL      : https://download.kde.org/stable/frameworks/5.64/ki18n-5.64.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.64/ki18n-5.64.0.tar.xz
+Source1 : https://download.kde.org/stable/frameworks/5.64/ki18n-5.64.0.tar.xz.sig
 Summary  : Advanced internationalization framework
 Group    : Development/Tools
 License  : BSD-3-Clause LGPL-2.1
@@ -79,14 +79,14 @@ locales components for the ki18n package.
 
 
 %prep
-%setup -q -n ki18n-5.63.0
+%setup -q -n ki18n-5.64.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1570920466
+export SOURCE_DATE_EPOCH=1573360182
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -103,11 +103,11 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1570920466
+export SOURCE_DATE_EPOCH=1573360182
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ki18n
-cp COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/ki18n/COPYING-CMAKE-SCRIPTS
-cp COPYING.LIB %{buildroot}/usr/share/package-licenses/ki18n/COPYING.LIB
+cp %{_builddir}/ki18n-5.64.0/COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/ki18n/095d1f504f6fd8add73a4e4964e37f260f332b6a
+cp %{_builddir}/ki18n-5.64.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/ki18n/9a1929f4700d2407c70b507b3b2aaf6226a9543c
 pushd clr-build
 %make_install
 popd
@@ -144,6 +144,7 @@ popd
 /usr/share/locale/sr@latin/LC_SCRIPTS/ki18n5/trapnakron.pmap
 /usr/share/locale/sr@latin/LC_SCRIPTS/ki18n5/trapnakron.pmapc
 /usr/share/locale/uk/LC_SCRIPTS/ki18n5/ki18n5.js
+/usr/share/qlogging-categories5/ki18n.categories
 
 %files dev
 %defattr(-,root,root,-)
@@ -174,13 +175,13 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5I18n.so.5
-/usr/lib64/libKF5I18n.so.5.63.0
+/usr/lib64/libKF5I18n.so.5.64.0
 /usr/lib64/qt5/plugins/kf5/ktranscript.so
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/ki18n/COPYING-CMAKE-SCRIPTS
-/usr/share/package-licenses/ki18n/COPYING.LIB
+/usr/share/package-licenses/ki18n/095d1f504f6fd8add73a4e4964e37f260f332b6a
+/usr/share/package-licenses/ki18n/9a1929f4700d2407c70b507b3b2aaf6226a9543c
 
 %files locales -f ki18n5.lang
 %defattr(-,root,root,-)
