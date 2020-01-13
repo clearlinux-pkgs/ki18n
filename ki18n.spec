@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : ki18n
-Version  : 5.65.0
-Release  : 29
-URL      : https://download.kde.org/stable/frameworks/5.65/ki18n-5.65.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.65/ki18n-5.65.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.65/ki18n-5.65.0.tar.xz.sig
+Version  : 5.66.0
+Release  : 30
+URL      : https://download.kde.org/stable/frameworks/5.66/ki18n-5.66.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.66/ki18n-5.66.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.66/ki18n-5.66.0.tar.xz.sig
 Summary  : Advanced internationalization framework
 Group    : Development/Tools
 License  : BSD-3-Clause LGPL-2.1
@@ -79,15 +79,15 @@ locales components for the ki18n package.
 
 
 %prep
-%setup -q -n ki18n-5.65.0
-cd %{_builddir}/ki18n-5.65.0
+%setup -q -n ki18n-5.66.0
+cd %{_builddir}/ki18n-5.66.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1576515868
+export SOURCE_DATE_EPOCH=1578934570
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -104,11 +104,11 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1576515868
+export SOURCE_DATE_EPOCH=1578934570
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ki18n
-cp %{_builddir}/ki18n-5.65.0/COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/ki18n/095d1f504f6fd8add73a4e4964e37f260f332b6a
-cp %{_builddir}/ki18n-5.65.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/ki18n/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+cp %{_builddir}/ki18n-5.66.0/COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/ki18n/095d1f504f6fd8add73a4e4964e37f260f332b6a
+cp %{_builddir}/ki18n-5.66.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/ki18n/9a1929f4700d2407c70b507b3b2aaf6226a9543c
 pushd clr-build
 %make_install
 popd
@@ -176,7 +176,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5I18n.so.5
-/usr/lib64/libKF5I18n.so.5.65.0
+/usr/lib64/libKF5I18n.so.5.66.0
 /usr/lib64/qt5/plugins/kf5/ktranscript.so
 
 %files license
