@@ -5,14 +5,14 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : ki18n
-Version  : 5.68.0
-Release  : 32
-URL      : https://download.kde.org/stable/frameworks/5.68/ki18n-5.68.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.68/ki18n-5.68.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.68/ki18n-5.68.0.tar.xz.sig
-Summary  : Advanced internationalization framework
+Version  : 5.69.0
+Release  : 33
+URL      : https://download.kde.org/stable/frameworks/5.69/ki18n-5.69.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.69/ki18n-5.69.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.69/ki18n-5.69.0.tar.xz.sig
+Summary  : No detailed summary available
 Group    : Development/Tools
-License  : BSD-3-Clause LGPL-2.1
+License  : BSD-3-Clause LGPL-2.1 LGPL-3.0
 Requires: ki18n-data = %{version}-%{release}
 Requires: ki18n-lib = %{version}-%{release}
 Requires: ki18n-license = %{version}-%{release}
@@ -46,7 +46,6 @@ Requires: ki18n-lib = %{version}-%{release}
 Requires: ki18n-data = %{version}-%{release}
 Provides: ki18n-devel = %{version}-%{release}
 Requires: ki18n = %{version}-%{release}
-Requires: ki18n = %{version}-%{release}
 
 %description dev
 dev components for the ki18n package.
@@ -79,36 +78,36 @@ locales components for the ki18n package.
 
 
 %prep
-%setup -q -n ki18n-5.68.0
-cd %{_builddir}/ki18n-5.68.0
+%setup -q -n ki18n-5.69.0
+cd %{_builddir}/ki18n-5.69.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1584298862
+export SOURCE_DATE_EPOCH=1586813803
 mkdir -p clr-build
 pushd clr-build
-# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
 export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %cmake ..
 make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1584298862
+export SOURCE_DATE_EPOCH=1586813803
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ki18n
-cp %{_builddir}/ki18n-5.68.0/COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/ki18n/095d1f504f6fd8add73a4e4964e37f260f332b6a
-cp %{_builddir}/ki18n-5.68.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/ki18n/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+cp %{_builddir}/ki18n-5.69.0/COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/ki18n/095d1f504f6fd8add73a4e4964e37f260f332b6a
+cp %{_builddir}/ki18n-5.69.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/ki18n/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+cp %{_builddir}/ki18n-5.69.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/ki18n/e458941548e0864907e654fa2e192844ae90fc32
 pushd clr-build
 %make_install
 popd
@@ -176,13 +175,14 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5I18n.so.5
-/usr/lib64/libKF5I18n.so.5.68.0
+/usr/lib64/libKF5I18n.so.5.69.0
 /usr/lib64/qt5/plugins/kf5/ktranscript.so
 
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/ki18n/095d1f504f6fd8add73a4e4964e37f260f332b6a
 /usr/share/package-licenses/ki18n/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+/usr/share/package-licenses/ki18n/e458941548e0864907e654fa2e192844ae90fc32
 
 %files locales -f ki18n5.lang
 %defattr(-,root,root,-)
