@@ -6,7 +6,7 @@
 #
 Name     : ki18n
 Version  : 5.70.0
-Release  : 34
+Release  : 35
 URL      : https://download.kde.org/stable/frameworks/5.70/ki18n-5.70.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.70/ki18n-5.70.0.tar.xz
 Source1  : https://download.kde.org/stable/frameworks/5.70/ki18n-5.70.0.tar.xz.sig
@@ -20,7 +20,6 @@ Requires: ki18n-locales = %{version}-%{release}
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
 BuildRequires : extra-cmake-modules-data
-BuildRequires : ki18n-dev
 BuildRequires : python3
 BuildRequires : qtbase-dev mesa-dev
 BuildRequires : qtdeclarative-dev
@@ -89,7 +88,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1589213767
+export SOURCE_DATE_EPOCH=1589221980
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -105,7 +104,7 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1589213767
+export SOURCE_DATE_EPOCH=1589221980
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ki18n
 cp %{_builddir}/ki18n-5.70.0/COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/ki18n/095d1f504f6fd8add73a4e4964e37f260f332b6a
