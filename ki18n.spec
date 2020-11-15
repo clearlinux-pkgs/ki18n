@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : ki18n
-Version  : 5.75.0
-Release  : 40
-URL      : https://download.kde.org/stable/frameworks/5.75/ki18n-5.75.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.75/ki18n-5.75.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.75/ki18n-5.75.0.tar.xz.sig
+Version  : 5.76.0
+Release  : 41
+URL      : https://download.kde.org/stable/frameworks/5.76/ki18n-5.76.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.76/ki18n-5.76.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.76/ki18n-5.76.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause LGPL-2.0 LGPL-2.1 LGPL-3.0
@@ -80,15 +80,15 @@ locales components for the ki18n package.
 
 
 %prep
-%setup -q -n ki18n-5.75.0
-cd %{_builddir}/ki18n-5.75.0
+%setup -q -n ki18n-5.76.0
+cd %{_builddir}/ki18n-5.76.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1602692973
+export SOURCE_DATE_EPOCH=1605415818
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -104,15 +104,15 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1602692973
+export SOURCE_DATE_EPOCH=1605415818
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ki18n
-cp %{_builddir}/ki18n-5.75.0/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/ki18n/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
-cp %{_builddir}/ki18n-5.75.0/LICENSES/LGPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/ki18n/20079e8f79713dce80ab09774505773c926afa2a
-cp %{_builddir}/ki18n-5.75.0/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/ki18n/3c3d7573e137d48253731c975ecf90d74cfa9efe
-cp %{_builddir}/ki18n-5.75.0/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/ki18n/757b86330df80f81143d5916b3e92b4bcb1b1890
-cp %{_builddir}/ki18n-5.75.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/ki18n/e458941548e0864907e654fa2e192844ae90fc32
-cp %{_builddir}/ki18n-5.75.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/ki18n/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/ki18n-5.76.0/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/ki18n/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
+cp %{_builddir}/ki18n-5.76.0/LICENSES/LGPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/ki18n/20079e8f79713dce80ab09774505773c926afa2a
+cp %{_builddir}/ki18n-5.76.0/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/ki18n/3c3d7573e137d48253731c975ecf90d74cfa9efe
+cp %{_builddir}/ki18n-5.76.0/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/ki18n/757b86330df80f81143d5916b3e92b4bcb1b1890
+cp %{_builddir}/ki18n-5.76.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/ki18n/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/ki18n-5.76.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/ki18n/e458941548e0864907e654fa2e192844ae90fc32
 pushd clr-build
 %make_install
 popd
@@ -181,7 +181,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5I18n.so.5
-/usr/lib64/libKF5I18n.so.5.75.0
+/usr/lib64/libKF5I18n.so.5.76.0
 /usr/lib64/qt5/plugins/kf5/ktranscript.so
 
 %files license
