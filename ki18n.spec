@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : ki18n
-Version  : 5.92.0
-Release  : 57
-URL      : https://download.kde.org/stable/frameworks/5.92/ki18n-5.92.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.92/ki18n-5.92.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.92/ki18n-5.92.0.tar.xz.sig
+Version  : 5.93.0
+Release  : 58
+URL      : https://download.kde.org/stable/frameworks/5.93/ki18n-5.93.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.93/ki18n-5.93.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.93/ki18n-5.93.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause CC0-1.0 LGPL-2.0 LGPL-2.1 LGPL-3.0
@@ -75,15 +75,15 @@ locales components for the ki18n package.
 
 
 %prep
-%setup -q -n ki18n-5.92.0
-cd %{_builddir}/ki18n-5.92.0
+%setup -q -n ki18n-5.93.0
+cd %{_builddir}/ki18n-5.93.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1647289777
+export SOURCE_DATE_EPOCH=1649702338
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -99,19 +99,19 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1647289777
+export SOURCE_DATE_EPOCH=1649702338
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ki18n
-cp %{_builddir}/ki18n-5.92.0/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/ki18n/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
-cp %{_builddir}/ki18n-5.92.0/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/ki18n/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0
-cp %{_builddir}/ki18n-5.92.0/LICENSES/LGPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/ki18n/20079e8f79713dce80ab09774505773c926afa2a
-cp %{_builddir}/ki18n-5.92.0/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/ki18n/3c3d7573e137d48253731c975ecf90d74cfa9efe
-cp %{_builddir}/ki18n-5.92.0/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/ki18n/757b86330df80f81143d5916b3e92b4bcb1b1890
-cp %{_builddir}/ki18n-5.92.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/ki18n/e458941548e0864907e654fa2e192844ae90fc32
-cp %{_builddir}/ki18n-5.92.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/ki18n/e458941548e0864907e654fa2e192844ae90fc32
-cp %{_builddir}/ki18n-5.92.0/docs/locale-data-qml-api.md.license %{buildroot}/usr/share/package-licenses/ki18n/28ba3ebe1aa04fad742c69eb685e2a5376e9276f
-cp %{_builddir}/ki18n-5.92.0/src/localedata-qml/qmldir.license %{buildroot}/usr/share/package-licenses/ki18n/f8811a2eedc5be7304d97dadbf498a66ddd5f494
-cp %{_builddir}/ki18n-5.92.0/src/localedata/qgis/generate-geographic-data.qgs.license %{buildroot}/usr/share/package-licenses/ki18n/5ca60da87c5035ecdea20354a6f3fd079ac47c20
+cp %{_builddir}/ki18n-5.93.0/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/ki18n/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
+cp %{_builddir}/ki18n-5.93.0/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/ki18n/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0
+cp %{_builddir}/ki18n-5.93.0/LICENSES/LGPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/ki18n/20079e8f79713dce80ab09774505773c926afa2a
+cp %{_builddir}/ki18n-5.93.0/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/ki18n/3c3d7573e137d48253731c975ecf90d74cfa9efe
+cp %{_builddir}/ki18n-5.93.0/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/ki18n/757b86330df80f81143d5916b3e92b4bcb1b1890
+cp %{_builddir}/ki18n-5.93.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/ki18n/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/ki18n-5.93.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/ki18n/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/ki18n-5.93.0/docs/locale-data-qml-api.md.license %{buildroot}/usr/share/package-licenses/ki18n/28ba3ebe1aa04fad742c69eb685e2a5376e9276f
+cp %{_builddir}/ki18n-5.93.0/src/localedata-qml/qmldir.license %{buildroot}/usr/share/package-licenses/ki18n/f8811a2eedc5be7304d97dadbf498a66ddd5f494
+cp %{_builddir}/ki18n-5.93.0/src/localedata/qgis/generate-geographic-data.qgs.license %{buildroot}/usr/share/package-licenses/ki18n/5ca60da87c5035ecdea20354a6f3fd079ac47c20
 pushd clr-build
 %make_install
 popd
@@ -190,9 +190,9 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5I18n.so.5
-/usr/lib64/libKF5I18n.so.5.92.0
+/usr/lib64/libKF5I18n.so.5.93.0
 /usr/lib64/libKF5I18nLocaleData.so.5
-/usr/lib64/libKF5I18nLocaleData.so.5.92.0
+/usr/lib64/libKF5I18nLocaleData.so.5.93.0
 /usr/lib64/qt5/plugins/kf5/ktranscript.so
 /usr/lib64/qt5/qml/org/kde/i18n/localeData/libki18nlocaledataqmlplugin.so
 /usr/lib64/qt5/qml/org/kde/i18n/localeData/qmldir
