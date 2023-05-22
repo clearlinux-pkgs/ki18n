@@ -6,11 +6,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : ki18n
-Version  : 5.105.0
-Release  : 71
-URL      : https://download.kde.org/stable/frameworks/5.105/ki18n-5.105.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.105/ki18n-5.105.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.105/ki18n-5.105.0.tar.xz.sig
+Version  : 5.106.0
+Release  : 72
+URL      : https://download.kde.org/stable/frameworks/5.106/ki18n-5.106.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.106/ki18n-5.106.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.106/ki18n-5.106.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause CC0-1.0 LGPL-2.0 LGPL-2.1 LGPL-3.0
@@ -21,7 +21,6 @@ Requires: ki18n-locales = %{version}-%{release}
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
 BuildRequires : extra-cmake-modules-data
-BuildRequires : pkgconfig(iso-codes)
 BuildRequires : python3
 # Suppress stripping binaries
 %define __strip /bin/true
@@ -79,31 +78,48 @@ locales components for the ki18n package.
 
 
 %prep
-%setup -q -n ki18n-5.105.0
-cd %{_builddir}/ki18n-5.105.0
+%setup -q -n ki18n-5.106.0
+cd %{_builddir}/ki18n-5.106.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1681144993
+export SOURCE_DATE_EPOCH=1684795229
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+%cmake ..
+make  %{?_smp_mflags}
+popd
+mkdir -p clr-build-avx2
+pushd clr-build-avx2
+export GCC_IGNORE_WERROR=1
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -Wl,-z,x86-64-v3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd -march=x86-64-v3 "
+export FCFLAGS="$FFLAGS -O3 -Wl,-z,x86-64-v3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd -march=x86-64-v3 "
+export FFLAGS="$FFLAGS -O3 -Wl,-z,x86-64-v3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd -march=x86-64-v3 "
+export CXXFLAGS="$CXXFLAGS -O3 -Wl,-z,x86-64-v3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd -march=x86-64-v3 "
+export CFLAGS="$CFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
+export CXXFLAGS="$CXXFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
+export FFLAGS="$FFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
+export FCFLAGS="$FCFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
 %cmake ..
 make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1681144993
+export SOURCE_DATE_EPOCH=1684795229
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ki18n
 cp %{_builddir}/ki18n-%{version}/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/ki18n/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c || :
@@ -115,10 +131,14 @@ cp %{_builddir}/ki18n-%{version}/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{bui
 cp %{_builddir}/ki18n-%{version}/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/ki18n/e458941548e0864907e654fa2e192844ae90fc32 || :
 cp %{_builddir}/ki18n-%{version}/docs/locale-data-qml-api.md.license %{buildroot}/usr/share/package-licenses/ki18n/28ba3ebe1aa04fad742c69eb685e2a5376e9276f || :
 cp %{_builddir}/ki18n-%{version}/src/localedata/qgis/generate-geographic-data.qgs.license %{buildroot}/usr/share/package-licenses/ki18n/5ca60da87c5035ecdea20354a6f3fd079ac47c20 || :
+pushd clr-build-avx2
+%make_install_v3  || :
+popd
 pushd clr-build
 %make_install
 popd
 %find_lang ki18n5
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
@@ -156,6 +176,8 @@ popd
 
 %files dev
 %defattr(-,root,root,-)
+/V3/usr/lib64/libKF5I18n.so
+/V3/usr/lib64/libKF5I18nLocaleData.so
 /usr/include/KF5/KI18n/KLazyLocalizedString
 /usr/include/KF5/KI18n/KLocalizedContext
 /usr/include/KF5/KI18n/KLocalizedString
@@ -192,10 +214,16 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
+/V3/usr/lib64/libKF5I18n.so.5
+/V3/usr/lib64/libKF5I18n.so.5.106.0
+/V3/usr/lib64/libKF5I18nLocaleData.so.5
+/V3/usr/lib64/libKF5I18nLocaleData.so.5.106.0
+/V3/usr/lib64/qt5/plugins/kf5/ktranscript.so
+/V3/usr/lib64/qt5/qml/org/kde/i18n/localeData/libki18nlocaledataqmlplugin.so
 /usr/lib64/libKF5I18n.so.5
-/usr/lib64/libKF5I18n.so.5.105.0
+/usr/lib64/libKF5I18n.so.5.106.0
 /usr/lib64/libKF5I18nLocaleData.so.5
-/usr/lib64/libKF5I18nLocaleData.so.5.105.0
+/usr/lib64/libKF5I18nLocaleData.so.5.106.0
 /usr/lib64/qt5/plugins/kf5/ktranscript.so
 /usr/lib64/qt5/qml/org/kde/i18n/localeData/libki18nlocaledataqmlplugin.so
 /usr/lib64/qt5/qml/org/kde/i18n/localeData/qmldir
