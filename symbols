@@ -1,161 +1,22 @@
-libKF6I18n.so.6:ki18n(char const*)
-libKF6I18n.so.6:ki18nc(char const*, char const*)
-libKF6I18n.so.6:ki18nd(char const*, char const*)
-libKF6I18n.so.6:ki18np(char const*, char const*)
-libKF6I18n.so.6:kxi18n(char const*)
-libKF6I18n.so.6:ki18ncp(char const*, char const*, char const*)
-libKF6I18n.so.6:ki18ndc(char const*, char const*, char const*)
-libKF6I18n.so.6:ki18ndp(char const*, char const*, char const*)
-libKF6I18n.so.6:kxi18nc(char const*, char const*)
-libKF6I18n.so.6:kxi18nd(char const*, char const*)
-libKF6I18n.so.6:kxi18np(char const*, char const*)
-libKF6I18n.so.6:ki18ndcp(char const*, char const*, char const*, char const*)
-libKF6I18n.so.6:kxi18ncp(char const*, char const*, char const*)
-libKF6I18n.so.6:kxi18ndc(char const*, char const*, char const*)
-libKF6I18n.so.6:kxi18ndp(char const*, char const*, char const*)
-libKF6I18n.so.6:kxi18ndcp(char const*, char const*, char const*, char const*)
-libKF6I18n.so.6:KLocalizedString::setLanguages(QList<QString> const&)
-libKF6I18n.so.6:KLocalizedString::clearLanguages()
+libKF6I18n.so.6:KCatalog::~KCatalog()
+libKF6I18n.so.6:KLocalizedContext::KLocalizedContext(QObject*)
+libKF6I18n.so.6:KLocalizedContext::~KLocalizedContext()
+libKF6I18n.so.6:KLocalizedString::KLocalizedString()
 libKF6I18n.so.6:KLocalizedString::applicationDomain()
-libKF6I18n.so.6:KLocalizedString::localizedFilePath(QString const&)
-libKF6I18n.so.6:KLocalizedString::addDomainLocaleDir(QByteArray const&, QString const&)
-libKF6I18n.so.6:KLocalizedString::setApplicationDomain(QByteArray const&)
-libKF6I18n.so.6:KLocalizedString::removeAcceleratorMarker(QString const&)
-libKF6I18n.so.6:KLocalizedString::availableDomainTranslations(QByteArray const&)
-libKF6I18n.so.6:KLocalizedString::isApplicationTranslatedInto(QString const&)
 libKF6I18n.so.6:KLocalizedString::availableApplicationTranslations()
+libKF6I18n.so.6:KLocalizedString::clearLanguages()
 libKF6I18n.so.6:KLocalizedString::languages()
-libKF6I18n.so.6:KLocalizedString::KLocalizedString(char const*, char const*, char const*, char const*, bool)
-libKF6I18n.so.6:KLocalizedString::KLocalizedString(KLocalizedString const&)
-libKF6I18n.so.6:KLocalizedString::KLocalizedString()
-libKF6I18n.so.6:KLocalizedString::KLocalizedString(char const*, char const*, char const*, char const*, bool)
-libKF6I18n.so.6:KLocalizedString::KLocalizedString(KLocalizedString const&)
-libKF6I18n.so.6:KLocalizedString::KLocalizedString()
 libKF6I18n.so.6:KLocalizedString::~KLocalizedString()
-libKF6I18n.so.6:KLocalizedString::~KLocalizedString()
-libKF6I18n.so.6:KLocalizedString::operator=(KLocalizedString const&)
-libKF6I18n.so.6:KLocalizedContext::qt_metacall(QMetaObject::Call, int, void**)
-libKF6I18n.so.6:KLocalizedContext::qt_metacast(char const*)
-libKF6I18n.so.6:KLocalizedContext::setTranslationDomain(QString const&)
-libKF6I18n.so.6:KLocalizedContext::translationDomainChanged(QString const&)
-libKF6I18n.so.6:KLocalizedContext::KLocalizedContext(QObject*)
-libKF6I18n.so.6:KLocalizedContext::KLocalizedContext(QObject*)
-libKF6I18n.so.6:KLocalizedContext::~KLocalizedContext()
-libKF6I18n.so.6:KLocalizedContext::~KLocalizedContext()
-libKF6I18n.so.6:KLocalizedContext::~KLocalizedContext()
-libKF6I18n.so.6:KLocalizedTranslator::qt_metacall(QMetaObject::Call, int, void**)
-libKF6I18n.so.6:KLocalizedTranslator::qt_metacast(char const*)
-libKF6I18n.so.6:KLocalizedTranslator::addContextToMonitor(QString const&)
-libKF6I18n.so.6:KLocalizedTranslator::setTranslationDomain(QString const&)
-libKF6I18n.so.6:KLocalizedTranslator::removeContextToMonitor(QString const&)
-libKF6I18n.so.6:KLocalizedTranslator::KLocalizedTranslator(QObject*)
 libKF6I18n.so.6:KLocalizedTranslator::KLocalizedTranslator(QObject*)
 libKF6I18n.so.6:KLocalizedTranslator::~KLocalizedTranslator()
-libKF6I18n.so.6:KLocalizedTranslator::~KLocalizedTranslator()
-libKF6I18n.so.6:KLocalizedTranslator::~KLocalizedTranslator()
-libKF6I18n.so.6:Kuit::setupForDomain(QByteArray const&)
-libKF6I18n.so.6:KCatalog::catalogLocaleDir(QByteArray const&, QString const&)
-libKF6I18n.so.6:KCatalog::addDomainLocaleDir(QByteArray const&, QString const&)
-libKF6I18n.so.6:KCatalog::availableCatalogLanguages(QByteArray const&)
-libKF6I18n.so.6:KCatalog::KCatalog(QByteArray const&, QString const&)
-libKF6I18n.so.6:KCatalog::KCatalog(QByteArray const&, QString const&)
-libKF6I18n.so.6:KCatalog::~KCatalog()
-libKF6I18n.so.6:KCatalog::~KCatalog()
-libKF6I18n.so.6:KuitSetup::setTagClass(QString const&, Kuit::TagClass)
-libKF6I18n.so.6:KuitSetup::setTagPattern(QString const&, QList<QString> const&, Kuit::VisualFormat, KLocalizedString const&, QString (*)(QList<QString> const&, QString const&, QHash<QString, QString> const&, QString const&, QList<QString> const&, Kuit::VisualFormat), int)
-libKF6I18n.so.6:KuitSetup::setFormatForMarker(QString const&, Kuit::VisualFormat)
 libKF6I18n.so.6:KuitSetup::~KuitSetup()
-libKF6I18n.so.6:KuitSetup::~KuitSetup()
-libKF6I18n.so.6:KLocalizedString::withDomain(char const*) const
-libKF6I18n.so.6:KLocalizedString::withFormat(Kuit::VisualFormat) const
-libKF6I18n.so.6:KLocalizedString::ignoreMarkup() const
-libKF6I18n.so.6:KLocalizedString::withLanguages(QList<QString> const&) const
-libKF6I18n.so.6:KLocalizedString::untranslatedText() const
-libKF6I18n.so.6:KLocalizedString::subs(QChar, int, QChar) const
-libKF6I18n.so.6:KLocalizedString::subs(QString const&, int, QChar) const
-libKF6I18n.so.6:KLocalizedString::subs(KLocalizedString const&, int, QChar) const
-libKF6I18n.so.6:KLocalizedString::subs(double, int, char, int, QChar) const
-libKF6I18n.so.6:KLocalizedString::subs(int, int, int, QChar) const
-libKF6I18n.so.6:KLocalizedString::subs(unsigned int, int, int, QChar) const
-libKF6I18n.so.6:KLocalizedString::subs(long, int, int, QChar) const
-libKF6I18n.so.6:KLocalizedString::subs(unsigned long, int, int, QChar) const
-libKF6I18n.so.6:KLocalizedString::subs(long long, int, int, QChar) const
-libKF6I18n.so.6:KLocalizedString::subs(unsigned long long, int, int, QChar) const
-libKF6I18n.so.6:KLocalizedString::isEmpty() const
-libKF6I18n.so.6:KLocalizedString::toString(Kuit::VisualFormat) const
-libKF6I18n.so.6:KLocalizedString::toString(char const*) const
-libKF6I18n.so.6:KLocalizedString::toString(QList<QString> const&) const
-libKF6I18n.so.6:KLocalizedString::toString() const
-libKF6I18n.so.6:KLocalizedString::inContext(QString const&, QString const&) const
-libKF6I18n.so.6:KLocalizedString::relaxSubs() const
-libKF6I18n.so.6:KLocalizedContext::metaObject() const
-libKF6I18n.so.6:KLocalizedContext::translationDomain() const
-libKF6I18n.so.6:KLocalizedContext::i18n(QString const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&) const
-libKF6I18n.so.6:KLocalizedContext::i18nc(QString const&, QString const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&) const
-libKF6I18n.so.6:KLocalizedContext::i18nd(QString const&, QString const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&) const
-libKF6I18n.so.6:KLocalizedContext::i18np(QString const&, QString const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&) const
-libKF6I18n.so.6:KLocalizedContext::xi18n(QString const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&) const
-libKF6I18n.so.6:KLocalizedContext::i18ncp(QString const&, QString const&, QString const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&) const
-libKF6I18n.so.6:KLocalizedContext::i18ndc(QString const&, QString const&, QString const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&) const
-libKF6I18n.so.6:KLocalizedContext::i18ndp(QString const&, QString const&, QString const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&) const
-libKF6I18n.so.6:KLocalizedContext::xi18nc(QString const&, QString const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&) const
-libKF6I18n.so.6:KLocalizedContext::xi18nd(QString const&, QString const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&) const
-libKF6I18n.so.6:KLocalizedContext::xi18np(QString const&, QString const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&) const
-libKF6I18n.so.6:KLocalizedContext::i18ndcp(QString const&, QString const&, QString const&, QString const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&) const
-libKF6I18n.so.6:KLocalizedContext::xi18ncp(QString const&, QString const&, QString const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&) const
-libKF6I18n.so.6:KLocalizedContext::xi18ndc(QString const&, QString const&, QString const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&) const
-libKF6I18n.so.6:KLocalizedContext::xi18ndp(QString const&, QString const&, QString const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&) const
-libKF6I18n.so.6:KLocalizedContext::xi18ndcp(QString const&, QString const&, QString const&, QString const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&, QVariant const&) const
-libKF6I18n.so.6:KLocalizedTranslator::metaObject() const
-libKF6I18n.so.6:KLocalizedTranslator::translate(char const*, char const*, char const*, int) const
-libKF6I18n.so.6:KCatalog::translate(QByteArray const&) const
-libKF6I18n.so.6:KCatalog::translate(QByteArray const&, QByteArray const&) const
-libKF6I18n.so.6:KCatalog::translate(QByteArray const&, QByteArray const&, QByteArray const&, unsigned long long) const
-libKF6I18n.so.6:KCatalog::translate(QByteArray const&, QByteArray const&, unsigned long long) const
-libKF6I18nLocaleData.so.6:KCountrySubdivision::fromLocation(float, float)
-libKF6I18nLocaleData.so.6:KCountrySubdivision::fromCode(QStringView)
-libKF6I18nLocaleData.so.6:KCountrySubdivision::fromCode(char const*)
-libKF6I18nLocaleData.so.6:KCountrySubdivision::KCountrySubdivision(KCountrySubdivision const&)
-libKF6I18nLocaleData.so.6:KCountrySubdivision::KCountrySubdivision()
-libKF6I18nLocaleData.so.6:KCountrySubdivision::KCountrySubdivision(KCountrySubdivision const&)
-libKF6I18nLocaleData.so.6:KCountrySubdivision::KCountrySubdivision()
-libKF6I18nLocaleData.so.6:KCountrySubdivision::~KCountrySubdivision()
-libKF6I18nLocaleData.so.6:KCountrySubdivision::~KCountrySubdivision()
-libKF6I18nLocaleData.so.6:KCountrySubdivision::operator=(KCountrySubdivision const&)
-libKF6I18nLocaleData.so.6:KCountry::fromAlpha2(QStringView)
-libKF6I18nLocaleData.so.6:KCountry::fromAlpha2(char const*)
-libKF6I18nLocaleData.so.6:KCountry::fromAlpha3(QStringView)
-libKF6I18nLocaleData.so.6:KCountry::fromAlpha3(char const*)
-libKF6I18nLocaleData.so.6:KCountry::fromQLocale(QLocale::Country)
+libKF6I18nLocaleData.so.6:KCountry::KCountry()
 libKF6I18nLocaleData.so.6:KCountry::allCountries()
-libKF6I18nLocaleData.so.6:KCountry::fromLocation(float, float)
+libKF6I18nLocaleData.so.6:KCountry::fromAlpha2(QStringView)
+libKF6I18nLocaleData.so.6:KCountry::fromAlpha3(QStringView)
 libKF6I18nLocaleData.so.6:KCountry::fromName(QStringView)
-libKF6I18nLocaleData.so.6:KCountry::KCountry(KCountry const&)
-libKF6I18nLocaleData.so.6:KCountry::KCountry()
-libKF6I18nLocaleData.so.6:KCountry::KCountry(KCountry const&)
-libKF6I18nLocaleData.so.6:KCountry::KCountry()
+libKF6I18nLocaleData.so.6:KCountry::fromQLocale(QLocale::Country)
 libKF6I18nLocaleData.so.6:KCountry::~KCountry()
-libKF6I18nLocaleData.so.6:KCountry::~KCountry()
-libKF6I18nLocaleData.so.6:KCountry::operator=(KCountry const&)
-libKF6I18nLocaleData.so.6:KTimeZone::fromLocation(float, float)
-libKF6I18nLocaleData.so.6:KTimeZone::country(char const*)
-libKF6I18nLocaleData.so.6:KCountrySubdivision::timeZoneIds() const
-libKF6I18nLocaleData.so.6:KCountrySubdivision::subdivisions() const
-libKF6I18nLocaleData.so.6:KCountrySubdivision::code() const
-libKF6I18nLocaleData.so.6:KCountrySubdivision::name() const
-libKF6I18nLocaleData.so.6:KCountrySubdivision::parent() const
-libKF6I18nLocaleData.so.6:KCountrySubdivision::country() const
-libKF6I18nLocaleData.so.6:KCountrySubdivision::isValid() const
-libKF6I18nLocaleData.so.6:KCountrySubdivision::operator==(KCountrySubdivision const&) const
-libKF6I18nLocaleData.so.6:KCountrySubdivision::operator!=(KCountrySubdivision const&) const
-libKF6I18nLocaleData.so.6:KCountry::timeZoneIds() const
-libKF6I18nLocaleData.so.6:KCountry::currencyCode() const
-libKF6I18nLocaleData.so.6:KCountry::subdivisions() const
-libKF6I18nLocaleData.so.6:KCountry::name() const
-libKF6I18nLocaleData.so.6:KCountry::alpha2() const
-libKF6I18nLocaleData.so.6:KCountry::alpha3() const
-libKF6I18nLocaleData.so.6:KCountry::country() const
-libKF6I18nLocaleData.so.6:KCountry::isValid() const
-libKF6I18nLocaleData.so.6:KCountry::emojiFlag() const
-libKF6I18nLocaleData.so.6:KCountry::operator==(KCountry const&) const
-libKF6I18nLocaleData.so.6:KCountry::operator!=(KCountry const&) const
+libKF6I18nLocaleData.so.6:KCountrySubdivision::KCountrySubdivision()
+libKF6I18nLocaleData.so.6:KCountrySubdivision::fromCode(QStringView)
+libKF6I18nLocaleData.so.6:KCountrySubdivision::~KCountrySubdivision()
